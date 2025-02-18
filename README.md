@@ -13,10 +13,14 @@
 
 @云梦
 
-3.待询问下k个证候, get_systoms(k, candidates)
+3.待询问的k个证候及问句, get_systoms(k, candidates)
 
-返回list, systoms
+返回systoms列表和系统问句question 
 
 @伟豪
 
-4.
+4.根据测试集医案回答系统问句question, get_answer(systoms, question)
+
+首先根据医案找到systoms中患者真实患有的证型, 然后调用4o生成一个可以回答question的句子
+
+@李贝
