@@ -325,6 +325,9 @@ class DiagnosticSystem:
             match_count = len(current_symptoms & symptoms)
             total_count = len(symptoms)
             scores[disease] = match_count / total_count if total_count > 0 else 0.0
+
+            #重叠程度修正概率
+            #scores[disease] = match_count*2 / (total_count+len(current_symptoms)) if total_count > 0 else 0.0
         return scores
 
 '''# 示例使用

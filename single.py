@@ -95,7 +95,10 @@ class DiagnosticSystem:
         for disease, disease_symptoms in self.disease_symptoms.items():
             match_count = len(symptoms & disease_symptoms)  # 交集
             total_disease_symptoms = len(disease_symptoms)  # 该疾病所有症状数量
-            match_rate = match_count / total_disease_symptoms  # 计算匹配率
+            #match_rate = match_count / total_disease_symptoms  # 计算匹配率
+
+            #使用重叠率代替概率计算
+            match_rate = match_count*2 / (len(symptoms) + total_disease_symptoms)
 
             scores[disease] = match_rate
 
